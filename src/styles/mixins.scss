@@ -1,0 +1,32 @@
+$main: #111111;
+$main-hover: #1f1f1f;
+$secondary: #1da1f2;
+$secondary-shade: #1da0f23b;
+$secondary-hover: #1285ccce;
+$shadedDark: rgba(0, 0, 0, 0.3);
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin headers {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+}
+@mixin boxShadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}

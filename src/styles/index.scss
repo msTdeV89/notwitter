@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
+  font-family: "Open Sans", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@import "./mixins.scss";
+
+@import "./global.scss";
+@import "../pages/main.scss";
+@import "../pages/home.scss";
+@import "../pages/login.scss";
+@import "../pages/signUp.scss";
+@import "../components/header.scss";
+@import "../components/menu.scss";
+@import "../components/newPost.scss";
+@import "../components/newPostMobile.scss";
+@import "../components/news.scss";
+@import "../components/postsList.scss";
+@import "../components/post.scss";
+@import "../reusable/input.scss";
+@import "../reusable/linkItem.scss";
+@import "../reusable/button.scss";

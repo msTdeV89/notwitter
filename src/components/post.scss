@@ -1,0 +1,29 @@
+.post {
+  padding: 15px;
+  border-bottom: 1px solid whitesmoke;
+  display: flex;
+  width: 100%;
+  &__avatar {
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  &__header {
+    @include flex(row, flex-start, center);
+    p {
+      margin-left: 10px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+    button {
+      margin-left: auto;
+    }
+  }
+  &__body {
+    width: 100%;
+    img {
+      margin-top: 15px;
+      border-radius: 15px;
+      width: 100%;
+    }
+  }
+}

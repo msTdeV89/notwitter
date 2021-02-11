@@ -1,0 +1,33 @@
+html,
+body,
+#root,
+.container,
+.app {
+  height: 100%;
+  width: 100%;
+}
+.app {
+  @include flex(column, flex-start, flex-start);
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 700px;
+}
+.page {
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+p {
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .app {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,14 @@
+.newPostMobile {
+  position: fixed !important;
+  bottom: 80px;
+  right: 20px;
+  background-color: $secondary !important;
+  color: white !important;
+  @include boxShadow;
+}
+
+@media (min-width: 768px) {
+  .newPostMobile {
+    display: none !important;
+  }
+}

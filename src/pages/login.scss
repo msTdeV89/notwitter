@@ -1,0 +1,28 @@
+.form {
+  @include center;
+  height: calc(100% - 60px);
+  width: 100%;
+  margin-top: 30px;
+  form {
+    @include flex(column, space-around, flex-start);
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+  }
+  p,
+  a {
+    margin-bottom: 20px;
+  }
+  a {
+    color: $secondary;
+  }
+  p {
+    width: 100%;
+    text-align: center;
+  }
+  .formBtn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

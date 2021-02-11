@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-family: "Open Sans", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+html,
+body,
+#root,
+.container,
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: hidden;
+}
+
+.page {
+  height: calc(100% - 60px);
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .app {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.header h3 {
+  margin-left: 15px;
+}
+
+.menu {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  border-top: 1px solid whitesmoke;
+}
+
+.menu nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+}
+
+.menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    width: 30%;
+    height: 100%;
+    padding: 15px;
+    border-top: none;
+    border-right: 1px solid whitesmoke;
+  }
+  .menu nav {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 150px;
+  }
+}
+
+.newPost {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.newPost textarea {
+  resize: none;
+}
+
+.newPostMobile {
+  position: fixed !important;
+  bottom: 80px;
+  right: 20px;
+  background-color: #378024 !important;
+  color: white !important;
+}
+
+@media (min-width: 768px) {
+  .newPostMobile {
+    display: none;
+  }
+}
+
+.linkItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.linkItem:nth-last-child(1) {
+  margin-left: auto;
+}
+
+.linkItem a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-right: 15px;
+}
+
+.linkItem p {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .linkItem {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .linkItem:nth-last-child(1) {
+    margin-left: 0;
+    margin-top: auto;
+  }
+  .linkItem a {
+    margin-right: 0;
+  }
+  .linkItem p {
+    margin-left: 15px;
+    display: inline;
+  }
+}
+/*# sourceMappingURL=index.css.map */

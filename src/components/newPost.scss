@@ -1,0 +1,31 @@
+.newPost {
+  @include flex(row, space-between, flex-start);
+  position: fixed;
+  top: 60px;
+  bottom: 60px;
+  padding: 15px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: none;
+  form {
+    width: 100%;
+    @include flex(column, flex-start, flex-end);
+  }
+  textarea {
+    width: 95%;
+    resize: none;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .newPost {
+    display: flex;
+    position: static;
+    border-bottom: 1px solid whitesmoke;
+  }
+}

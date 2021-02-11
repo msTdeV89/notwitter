@@ -1,0 +1,10 @@
+.header {
+  @include flex(row, flex-start, center);
+  @include headers;
+  border-bottom: 1px solid whitesmoke;
+  h3 {
+    color: $secondary;
+    text-shadow: -0.5px 0.5px 1px rgba(0, 0, 0, 0.5);
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,13 @@
+.newPost {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: red;
+}
+
+.newPost textarea {
+  resize: none;
+}
+/*# sourceMappingURL=newPost.css.map */

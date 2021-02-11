@@ -1,0 +1,39 @@
+.menu {
+  @include headers;
+  border-top: 1px solid whitesmoke;
+  order: 1;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  z-index: 1000;
+  nav {
+    @include flex(row, flex-start, flex-start);
+    height: 100%;
+  }
+  ul {
+    @include flex(row, flex-start, center);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    flex: 1;
+    min-width: 200px;
+    width: auto;
+    height: 100%;
+    padding: 60px 15px 15px;
+    border-top: none;
+    border-right: 1px solid whitesmoke;
+    order: 0;
+    position: static;
+    nav {
+      justify-content: flex-end;
+    }
+    ul {
+      flex-direction: column;
+      max-width: 150px;
+    }
+  }
+}

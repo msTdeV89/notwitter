@@ -1,0 +1,14 @@
+.news {
+  display: none;
+  padding: 15px;
+  height: 100%;
+  width: auto;
+  flex: 1;
+  border-left: 1px solid whitesmoke;
+}
+
+@media (min-width: 1024px) {
+  .news {
+    display: flex;
+  }
+}
