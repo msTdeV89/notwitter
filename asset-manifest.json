@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/notwitter/static/css/main.329698b0.chunk.css",
-    "main.js": "/notwitter/static/js/main.0a4f2bae.chunk.js",
-    "main.js.map": "/notwitter/static/js/main.0a4f2bae.chunk.js.map",
+    "main.css": "/notwitter/static/css/main.ab04ee36.chunk.css",
+    "main.js": "/notwitter/static/js/main.64b3e37f.chunk.js",
+    "main.js.map": "/notwitter/static/js/main.64b3e37f.chunk.js.map",
     "runtime-main.js": "/notwitter/static/js/runtime-main.4e197534.js",
     "runtime-main.js.map": "/notwitter/static/js/runtime-main.4e197534.js.map",
-    "static/js/2.01568587.chunk.js": "/notwitter/static/js/2.01568587.chunk.js",
-    "static/js/2.01568587.chunk.js.map": "/notwitter/static/js/2.01568587.chunk.js.map",
+    "static/js/2.3e284a25.chunk.js": "/notwitter/static/js/2.3e284a25.chunk.js",
+    "static/js/2.3e284a25.chunk.js.map": "/notwitter/static/js/2.3e284a25.chunk.js.map",
     "index.html": "/notwitter/index.html",
-    "static/css/main.329698b0.chunk.css.map": "/notwitter/static/css/main.329698b0.chunk.css.map",
-    "static/js/2.01568587.chunk.js.LICENSE.txt": "/notwitter/static/js/2.01568587.chunk.js.LICENSE.txt"
+    "static/css/main.ab04ee36.chunk.css.map": "/notwitter/static/css/main.ab04ee36.chunk.css.map",
+    "static/js/2.3e284a25.chunk.js.LICENSE.txt": "/notwitter/static/js/2.3e284a25.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4e197534.js",
-    "static/js/2.01568587.chunk.js",
-    "static/css/main.329698b0.chunk.css",
-    "static/js/main.0a4f2bae.chunk.js"
+    "static/js/2.3e284a25.chunk.js",
+    "static/css/main.ab04ee36.chunk.css",
+    "static/js/main.64b3e37f.chunk.js"
   ]
 }
