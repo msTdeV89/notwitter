@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, IconButton } from "@material-ui/core";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { db } from "../firebase/firebase";
+import * as actions from "../redux/actions/actionTypes";
+import { useDispatch, useSelector } from "react-redux";
+import firebase from "../firebase/firebase";
 
-const Post = ({ title }) => {
+const Post = ({ post }) => {
+  const userPosts = useSelector((state) => state.user.currentUser);
+  const [author, setAuthor] = useState(null);
+  const dispatch = useDispatch();
+  const { currentUser, date, content, id, image } = post;
+  const u = JSON.parse(localStorage.getItem("notwitterCurrentUser"));
+  useEffect(() => {
+    if (u) {
+      setAuthor(u.posts.includes(id));
+    }
+  }, [id, u, userPosts]);
+  console.log(author);
   return (
     <article className='post'>
       <aside className='post__avatar'>
@@ -10,24 +25,34 @@ const Post = ({ title }) => {
       </aside>
       <div className='post__body'>
         <header className='post__header'>
-          <h4 className='post__author'>msT</h4>
-          <p className='post__date'>20/02/21</p>
-          <IconButton>
-            <MoreHorizIcon />
-          </IconButton>
+          <h4 className='post__author'>{currentUser}</h4>
+          <p className='post__date'>{new Date(date).toLocaleDateString()}</p>
+          {author ? (
+            <IconButton
+              onClick={async () => {
+                await db
+                  .collection("posts")
+                  .doc(id)
+                  .delete()
+                  .then(async () => {
+                    await db
+                      .collection("users")
+                      .doc(u.uid)
+                      .update({
+                        posts: firebase.firestore.FieldValue.arrayRemove(id),
+                      });
+                    dispatch({ type: actions.REMOVE_POST, payload: id });
+                  });
+              }}
+            >
+              <HighlightOffIcon />
+            </IconButton>
+          ) : (
+            ""
+          )}
         </header>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde labore,
-          fuga ipsa voluptatum eligendi voluptate ratione hic, repudiandae velit
-          provident aut harum iusto, facilis est doloribus! Quis error
-          voluptates inventore quidem quos dignissimos sint laboriosam nesciunt
-          repellat sit, harum voluptatum quasi minima exercitationem ullam
-          dolores iusto facere dicta veniam accusantium!
-        </p>
-        <img
-          src='https://www.pcgamesn.com/wp-content/uploads/2021/02/cyberpunk-2077-cyber-attack-580x334.jpg'
-          alt='https://www.pcgamesn.com/wp-content/uploads/2021/02/cyberpunk-2077-cyber-attack-580x334.jpg'
-        />
+        <p>{content}</p>
+        <img src={image} alt={image} />
       </div>
     </article>
   );

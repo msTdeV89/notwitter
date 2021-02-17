@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../reusable/Input";
 import Button from "../reusable/Button";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { auth } from "../firebase/firebase";
 
 const Login = () => {
   const dispatch = useDispatch();
-
+  const [err, setErr] = useState("Already registered?");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleValue = (e) => {
@@ -18,27 +18,34 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     await auth
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        console.log(userCredential);
         dispatch({
           type: actions.LOGIN,
           payload: userCredential.user.uid,
         });
+        localStorage.setItem(
+          "notwitterUser",
+          JSON.stringify(userCredential.user.uid)
+        );
+
         setEmail("");
         setPassword("");
       })
       .catch((err) => {
-        console.log(err.code);
-        console.log(err.message);
+        setErr(err.message);
       });
   };
+  useEffect(() => {
+    setTimeout(() => {
+      setErr("Already registered?");
+    }, 3000);
+  }, [err]);
   return (
     <div className='form login'>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <p>Already registered?</p>
+        <p>{err}</p>
         <Input
           name='Email'
           type='text'
@@ -51,7 +58,7 @@ const Login = () => {
           value={password}
           func={(e) => handleValue(e)}
         />
-        <Link to='signup'>Don't have an account?</Link>
+        <Link to='/notwitter/signup'>Don't have an account?</Link>
         <Button title='Log In' type='submit' cls='formBtn' />
       </form>
     </div>

@@ -10,6 +10,7 @@ import { auth } from "../firebase/firebase";
 
 const Menu = () => {
   const user = useSelector((state) => state.user.user);
+  const currentPage = useSelector((state) => state.global.currentPage);
   const dispatch = useDispatch();
   return user ? (
     <header className='menu'>
@@ -19,12 +20,19 @@ const Menu = () => {
             path='/notwitter'
             title='Home'
             icon={<HomeIcon fontSize='large' />}
-            isActive
+            isActive={currentPage === "Home"}
+            func={() =>
+              dispatch({ type: actions.CURRENT_PAGE, payload: "Home" })
+            }
           />
           <LinkItem
-            path='/profile'
+            path='/notwitter/profile'
             title='Profile'
             icon={<FaceIcon fontSize='large' />}
+            isActive={currentPage === "Profile"}
+            func={() =>
+              dispatch({ type: actions.CURRENT_PAGE, payload: "Profile" })
+            }
           />
           <LinkItem
             path='/notwitter'
@@ -33,6 +41,8 @@ const Menu = () => {
               await auth
                 .signOut()
                 .then(() => {
+                  localStorage.removeItem("notwitterUser");
+                  localStorage.removeItem("notwitterCurrentUser");
                   dispatch({ type: actions.SIGN_OUT });
                   console.log("Signed out.");
                 })

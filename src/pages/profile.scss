@@ -1,0 +1,27 @@
+.profile {
+  padding: 15px;
+  &__inner {
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  h3 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    span {
+      color: $secondary;
+    }
+  }
+  ul {
+    li {
+      @include flex(row, space-between, center);
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid whitesmoke;
+      span:nth-child(1) {
+        font-weight: bold;
+      }
+    }
+  }
+}

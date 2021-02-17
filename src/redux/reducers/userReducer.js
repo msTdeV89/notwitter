@@ -7,13 +7,13 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actions.USER_UPDATE:
+    case actions.SIGN_UP:
       return { ...state, user: action.payload };
     case actions.LOGIN:
       return { ...state, user: action.payload };
     case actions.SIGN_OUT:
       return { ...state, user: null, currentUser: null };
-    case actions.SET_PROFILE:
+    case actions.GET_USER_DATA:
       return { ...state, currentUser: action.payload };
     default:
       return state;

@@ -1,8 +1,12 @@
 .newPostMobile {
+  @include center;
   position: fixed !important;
   bottom: 80px;
   right: 20px;
+  width: 60px;
+  height: 60px;
   background-color: $secondary !important;
+  border-radius: 50%;
   color: white !important;
   @include boxShadow;
 }
